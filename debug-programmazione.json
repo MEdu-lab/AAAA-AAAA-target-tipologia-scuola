@@ -1,0 +1,62 @@
+{
+  "programmazione": {
+    "totale_incontri": 33,
+    "media_per_mese": 4.1,
+    "dettaglio_per_mese": {
+      "Ottobre": 5,
+      "Novembre": 4,
+      "Dicembre": 3,
+      "Gennaio": 4,
+      "Febbraio": 4,
+      "Marzo": 4,
+      "Aprile": 5,
+      "Maggio": 4
+    },
+    "primo_incontro": "01/10/2025",
+    "ultimo_incontro": "27/05/2026"
+  },
+  "costi": {
+    "bimestri": [
+      [
+        "ottobre",
+        "novembre"
+      ],
+      [
+        "dicembre",
+        "gennaio"
+      ],
+      [
+        "febbraio",
+        "marzo"
+      ],
+      [
+        "aprile",
+        "maggio"
+      ]
+    ],
+    "numero_bimestri": 4,
+    "costo_totale": 480,
+    "dettaglio_pagamenti": [
+      {
+        "periodo": "ottobre-novembre",
+        "importo": 120,
+        "scadenza": "inizio ottobre"
+      },
+      {
+        "periodo": "dicembre-gennaio",
+        "importo": 120,
+        "scadenza": "inizio dicembre"
+      },
+      {
+        "periodo": "febbraio-marzo",
+        "importo": 120,
+        "scadenza": "inizio febbraio"
+      },
+      {
+        "periodo": "aprile-maggio",
+        "importo": 120,
+        "scadenza": "inizio aprile"
+      }
+    ]
+  }
+}
