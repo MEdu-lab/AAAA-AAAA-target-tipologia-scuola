@@ -29,11 +29,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Node.js v18
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-
+    - name: Installare Node.js
+      run: |
+        curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+        apt-get install -y nodejs
+    
+    
     - name: Installare dipendenze Node.js (liquidjs, js-yaml)
       run: npm install liquidjs js-yaml
 
