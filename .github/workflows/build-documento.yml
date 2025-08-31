@@ -1,42 +1,12 @@
-# .github/workflows/assembla_doc_template.yml
-
-name: Assembla Documento con Template
-
-on:
-  push:
-    branches: [ main ]
-    paths: 
-      - 'docs/sezioni/**'
-      - 'config.yml'
-      - '.github/scripts/**'
-      - '.github/workflows/**'
-
-  pull_request:
-    branches: [ main ]
-    paths:
-      - 'docs/sezioni/**'
-      - 'config.yml'
-      - '.github/scripts/**'
-      - '.github/workflows/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    container:
+      image: ghcr.io/kjarosh/latex:2025.1
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    # --- Inizio Sezione Installazione Dipendenze ---
-    - name: Installare dipendenze di sistema (LaTeX e Pandoc)
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          pandoc \
-          texlive-latex-base \
-          texlive-fonts-recommended \
-          texlive-extra-utils \
-          texlive-lang-italian
 
     - name: Setup Node.js v18
       uses: actions/setup-node@v4
@@ -46,10 +16,11 @@ jobs:
     - name: Installare dipendenze Node.js (liquidjs, js-yaml)
       run: npm install liquidjs js-yaml
 
-    # --- Fine Sezione Installazione Dipendenze ---
-              
     - name: Processa i template con lo script Node.js
       run: node .github/scripts/process-templates.js
+
+    - name: Installare Pandoc
+      run: sudo apt-get update && sudo apt-get install -y pandoc
 
     - name: Genera il PDF con Pandoc
       run: |
