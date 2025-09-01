@@ -70,6 +70,7 @@ jobs:
     - name: Commit del documento assemblato
       run: |
         cd "$GITHUB_WORKSPACE"
+        ls -la
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add progetto-completo.md progetto-completo.pdf debug-programmazione.json
