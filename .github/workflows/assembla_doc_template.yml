@@ -31,6 +31,11 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Debug .git presence immediately after checkout
+      run: ls -la ${{ github.workspace }}/.git
 
     - name: Install Python + deps
       run: |
