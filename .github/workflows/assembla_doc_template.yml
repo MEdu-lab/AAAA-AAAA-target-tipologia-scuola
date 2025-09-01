@@ -60,6 +60,13 @@ jobs:
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
 
+    - name: Mostra working directory e presenza .git
+      run: |
+        echo "PWD=$(pwd)"
+        echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+        ls -la "$GITHUB_WORKSPACE"
+        ls -la "$GITHUB_WORKSPACE/.git"
+
     - name: Commit del documento assemblato
       run: |
         cd "$GITHUB_WORKSPACE"
