@@ -71,8 +71,8 @@ jobs:
       run: |
         cd "$GITHUB_WORKSPACE"
         ls -la
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
         git add progetto-completo.md progetto-completo.pdf debug-programmazione.json
         git diff --staged --quiet || git commit -m "Auto-aggiornamento documento con template [skip ci]"
 
