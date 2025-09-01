@@ -1,0 +1,70 @@
+# .github/workflows/assembla_doc_template.yml
+
+name: Assembla Documento con Template
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'docs/sezioni/**'
+      - 'config.yml'
+      - '.github/scripts/**'
+      - '.github/workflows/**'
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docs/sezioni/**'
+      - 'config.yml'
+      - '.github/scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/kjarosh/latex:medium
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Installa Python e pip
+    - name: Installare Python
+      run: |
+        apt-get update
+        apt-get install -y python3 python3-pip
+
+    # Installa dipendenze Python (puoi usare requirements.txt se vuoi)
+    - name: Installare dipendenze Python
+      run: |
+        pip3 install pyyaml python-liquid
+
+    # Esegui lo script Python al posto di quello Node.js
+    - name: Processa i template con Python
+      run: python3 .github/scripts/process_templates.py
+
+    - name: Installare Pandoc
+      run: apt-get install -y pandoc
+
+    - name: Genera il PDF con Pandoc
+      run: |
+        pandoc progetto-completo.md -o progetto-completo.pdf \
+          --pdf-engine=pdflatex \
+          --variable geometry:margin=2cm \
+          --variable fontsize=11pt \
+          --variable documentclass=article \
+          --variable lang=it
+
+    - name: Commit del documento assemblato
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add progetto-completo.md progetto-completo.pdf debug-programmazione.json
+        git diff --staged --quiet || git commit -m "Auto-aggiornamento documento con template [skip ci]"
+        
+    - name: Push delle modifiche
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
