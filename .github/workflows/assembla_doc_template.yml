@@ -35,7 +35,7 @@ jobs:
         fetch-depth: 0
 
     - name: Debug .git presence immediately after checkout
-      run: ls -la ${{ github.workspace }}/.git
+      run: ls -la $GITHUB_WORKSPACE/.git
 
     - name: Install Python + deps
       run: |
