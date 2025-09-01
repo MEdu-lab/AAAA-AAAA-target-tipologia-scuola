@@ -32,7 +32,7 @@ jobs:
     - name: Install Python + deps
       run: |
         apk add --no-cache python3 py3-pip bash
-        pip install pyyaml python-liquid
+        pip install --break-system-packages pyyaml python-liquid
 
     - name: Processa i template con Python
       run: python3 .github/scripts/process_templates.py
