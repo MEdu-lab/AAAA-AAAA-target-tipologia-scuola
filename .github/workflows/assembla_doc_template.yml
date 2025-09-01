@@ -39,8 +39,8 @@ jobs:
 
     - name: Install Python + deps
       run: |
-        apk add --no-cache python3 py3-pip bash
-        pip install --break-system-packages pyyaml python-liquid git
+        apk add --no-cache python3 py3-pip bash git
+        pip install --break-system-packages pyyaml python-liquid 
 
     - name: Processa i template con Python
       run: python3 .github/scripts/process-template.py
