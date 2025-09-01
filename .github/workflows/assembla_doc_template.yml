@@ -35,7 +35,7 @@ jobs:
         pip install --break-system-packages pyyaml python-liquid
 
     - name: Processa i template con Python
-      run: python3 .github/scripts/process_template.py
+      run: python3 .github/scripts/process-template.py
 
     - name: Install Pandoc
       run: apk add --no-cache pandoc
