@@ -52,6 +52,9 @@ jobs:
           --variable documentclass=article \
           --variable lang=it
 
+    - name: Debug check for .git
+      run: ls -la ${{ github.workspace }}/.git
+
     - name: Commit del documento assemblato
       working-directory: ${{ github.workspace }}
       run: |
