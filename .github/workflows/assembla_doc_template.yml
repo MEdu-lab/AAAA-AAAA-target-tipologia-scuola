@@ -29,23 +29,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Installa Python e pip
-    - name: Installare Python
+    - name: Install Python + deps
       run: |
-        apt-get update
-        apt-get install -y python3 python3-pip
+        apk add --no-cache python3 py3-pip bash
+        pip install pyyaml python-liquid
 
-    # Installa dipendenze Python (puoi usare requirements.txt se vuoi)
-    - name: Installare dipendenze Python
-      run: |
-        pip3 install pyyaml python-liquid
-
-    # Esegui lo script Python al posto di quello Node.js
     - name: Processa i template con Python
       run: python3 .github/scripts/process_templates.py
 
-    - name: Installare Pandoc
-      run: apt-get install -y pandoc
+    - name: Install Pandoc
+      run: apk add --no-cache pandoc
 
     - name: Genera il PDF con Pandoc
       run: |
@@ -62,7 +55,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git add progetto-completo.md progetto-completo.pdf debug-programmazione.json
         git diff --staged --quiet || git commit -m "Auto-aggiornamento documento con template [skip ci]"
-        
+
     - name: Push delle modifiche
       uses: ad-m/github-push-action@master
       with:
