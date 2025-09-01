@@ -58,10 +58,10 @@ jobs:
           --variable lang=it
 
     - name: Debug check for .git
-      run: ls -la ${{ github.workspace }}/.git
+      run: ls -la $GITHUB_WORKSPACE/.git
 
     - name: Commit del documento assemblato
-      working-directory: ${{ github.workspace }}
+      working-directory: $GITHUB_WORKSPACE
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
