@@ -26,12 +26,15 @@ jobs:
       image: ghcr.io/kjarosh/latex:2024.4-medium
 
     steps:
+    - name: Install git
+      run: apk add --no-cache git
+
     - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Install Python + deps
       run: |
-        apk add --no-cache python3 py3-pip bash git
+        apk add --no-cache python3 py3-pip bash
         pip install --break-system-packages pyyaml python-liquid
 
     - name: Processa i template con Python
