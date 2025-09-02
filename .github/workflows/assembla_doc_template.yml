@@ -52,11 +52,14 @@ jobs:
 
     - name: Genera il PDF con Pandoc
       run: |
+        echo "\usepackage{mystyle}" > temp-header.tex
         pandoc progetto-completo.md -o progetto-completo.pdf \
           --pdf-engine=pdflatex \
           -V documentclass=article \
           -V lang=it \
-          -H header.tex
+          -H temp-header.tex
+        rm temp-header.tex
+
 
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
