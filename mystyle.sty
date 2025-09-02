@@ -7,6 +7,5 @@
 % Dimensione del font
 \renewcommand\normalsize{\fontsize{11}{13}\selectfont}
 
-% Centrare i titoli di sezione
-\RequirePackage{sectsty}
-\sectionfont{\centering}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\normalfont\Large\bfseries\centering}{\thesection}{1em}{}
