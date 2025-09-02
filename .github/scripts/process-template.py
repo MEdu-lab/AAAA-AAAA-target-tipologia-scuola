@@ -17,10 +17,6 @@ documentclass: article
 header-includes:
   - \\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}
   - \\usepackage{{styles/mystyle}}
-  - \\usepackage{{authblk}}
-  - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
-  - \\renewcommand\\Affilfont{{\\small\\itshape}}
-  - \\setlength{{\\affilsep}}{{1em}}
 """
 
     # Aggiunge ogni autore e affiliazione con indice progressivo
