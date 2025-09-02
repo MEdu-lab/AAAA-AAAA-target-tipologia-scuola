@@ -23,32 +23,6 @@ header-includes:
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
 """
-    yaml_header += """  - |
-        \\makeatletter
-        \\renewcommand\\@date{{%
-          \\vspace{-\\baselineskip}%
-          \\large\\centering
-          \\begin{tabular}{@{}c@{}}
-            First Author\\textsuperscript{1} \\\\
-            \\normalsize first.author@email.com
-          \\end{tabular}%
-          \\quad and\\quad
-          \\begin{tabular}{@{}c@{}}
-            Second Author\\textsuperscript{2} \\\\
-            \\normalsize second.author@email.com
-          \\end{tabular}
-    
-          \\bigskip
-    
-          \\textsuperscript{1}Some Department, Some University\\par
-          \\textsuperscript{2}Some Department, Some University
-    
-          \\bigskip
-    
-          \\today
-        }}
-        \\makeatother
-"""
 
     # Aggiunge ogni autore e affiliazione con indice progressivo
     for idx, maestro in enumerate(config['maestri'], start=1):
