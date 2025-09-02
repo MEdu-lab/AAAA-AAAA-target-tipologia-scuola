@@ -46,7 +46,7 @@ jobs:
 
     - name: Processa i template con Python
       run: |
-        rm README.md
+        rm -f README.md
         python3 .github/scripts/process-template.py
 
     - name: Install Pandoc
