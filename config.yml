@@ -6,10 +6,10 @@ progetto:
 
 # Informazioni sui maestri
 maestri:
-  - nome: "Giulio Romano De Mattia"
-    qualifica: "operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma"
   - nome: "Pietro Barale"
     qualifica: "operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma"
+  - nome: "Giulio Romano De Mattia"
+    qualifica: "operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma"
   - nome: "Marco Di Gasbarro"
     qualifica: "coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara"
 
