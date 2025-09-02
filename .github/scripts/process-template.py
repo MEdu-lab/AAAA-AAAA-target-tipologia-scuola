@@ -18,9 +18,7 @@ documentclass: article
 header-includes:
   - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
-  - \\usepackage{{titling}}
-  - | 
-    \\pretitle{{\\begin{{center}}\\LARGE {config['progetto']['gruppo']} \\\\[1em]\\end{{center}}}}
+  - \newcommand{\\gruppo}{config['progetto']['gruppo']}
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
