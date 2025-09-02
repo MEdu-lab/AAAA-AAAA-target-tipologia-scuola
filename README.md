@@ -1,14 +1,21 @@
 ---
 title: "MEduLab"
 subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"
-author:
-  - name: "Giulio Romano De Mattia"
-    affiliation: "operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma"
-  - name: "Pietro Barale"
-    affiliation: "operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma"
-  - name: "Marco Di Gasbarro"
-    affiliation: "coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara"
 documentclass: article
+header-includes:
+  - \usepackage{styles/mystyle}
+  - \usepackage{authblk}
+
+  # Ridefinisce il formato autori con authblk
+  - \renewcommand\Authfont{\normalsize\bfseries}
+  - \renewcommand\Affilfont{\small\itshape}
+  - \setlength{\affilsep}{1em}
+  - \author[1]{Giulio Romano De Mattia}
+  - \affil[1]{operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma}
+  - \author[2]{Pietro Barale}
+  - \affil[2]{operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma}
+  - \author[3]{Marco Di Gasbarro}
+  - \affil[3]{coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara}
 ---
 
 Per il quarto anno consecutivo vi proponiamo il laboratorio di musica d'insieme per l'infanzia, un corso extracurriculare pomeridiano aperto alle bambine e ai bambini che frequentano la Casa dei Bambini *il Girasole*. Ogni anno il laboratorio è stato guidato da musicisti formati nella pratica della musica contemporanea, elettroacustica e popolare, che hanno condiviso con i bambini un'atmosfera leggera ma densa di attività.
