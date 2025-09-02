@@ -8,20 +8,26 @@ from liquid import Template
 # --- Helpers ---
 
 def generate_yaml_header(config: dict) -> str:
-    """Genera l'header YAML per Pandoc con authblk"""
+    """Genera l'header YAML per Pandoc con authblk e stile personalizzato"""
     
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
 documentclass: article
 header-includes:
+  - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
+
+  # Ridefinisce il formato autori con authblk
+  - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
+  - \\renewcommand\\Affilfont{{\\small\\itshape}}
+  - \\setlength{{\\affilsep}}{{1em}}
 """
 
-    # Aggiunge ogni autore e la sua affiliazione
+    # Aggiunge ogni autore e affiliazione con indice progressivo
     for idx, maestro in enumerate(config['maestri'], start=1):
-        yaml_header += f'  - \author[{idx}]{{{maestro["nome"]}}}\n'
-        yaml_header += f'  - \affil[{idx}]{{{maestro["qualifica"]}}}\n'
+        yaml_header += f'  - \\author[{idx}]{{{maestro["nome"]}}}\n'
+        yaml_header += f'  - \\affil[{idx}]{{{maestro["qualifica"]}}}\n'
 
     yaml_header += "---\n\n"
     return yaml_header
