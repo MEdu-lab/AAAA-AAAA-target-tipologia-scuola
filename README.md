@@ -19,7 +19,7 @@ Nella progettazione di esperienze di apprendimento significative cerchiamo l'inn
 >*il ritmo si può solo liberare, sprigionare. Ritmo non è un'entità astratta, ritmo è la vita stessa. Ritmo agisce e provoca, è la forza che unisce linguaggio, musica e movimento.* (Carl Orff)
 
 
-<!-- **Maestri:** -->
+<!-- **Maestri:** 
 
 - **Pietro Barale** - operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma
 
@@ -28,6 +28,7 @@ Nella progettazione di esperienze di apprendimento significative cerchiamo l'inn
 - **Marco Di Gasbarro** - coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara
 
 
+-->
 
 
 ---
