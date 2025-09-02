@@ -10,17 +10,6 @@ from liquid import Template
 def generate_yaml_header(config: dict) -> str:
     """Genera l'header YAML per Pandoc con authblk e stile personalizzato"""
     
-
-    latex_patch = r"""
-  - |
-    \makeatletter
-    \pretocmd{\@author}
-      {\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}
-      {}{}
-    \makeatother
-"""
-
-
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
@@ -29,11 +18,9 @@ header-includes:
   - \\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}
   - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
-  - \\usepackage{{etoolbox}} # <-- 1. CARICA IL PACCHETTO NECESSARIO
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
-{latex_patch}
 """
 
     # Aggiunge ogni autore e affiliazione con indice progressivo
