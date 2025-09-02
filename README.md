@@ -5,7 +5,7 @@ author:
   - "Giulio Romano De Mattia"
   - "Pietro Barale"
   - "Marco Di Gasbarro"
-date: "\today"    # Userà la data corrente
+
 lang: it              # Documento in italiano
 documentclass: article # Classe LaTeX
 ---
