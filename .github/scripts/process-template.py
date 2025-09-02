@@ -8,24 +8,24 @@ from liquid import Template
 # --- Helpers ---
 
 def generate_yaml_header(config: dict) -> str:
-    """Genera l'header YAML per il documento Markdown"""
+    """Genera l'header YAML per Pandoc con authblk"""
     
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
-author:
+documentclass: article
+header-includes:
+  - \\usepackage{{authblk}}
 """
-    
-    # Aggiunge ogni autore con struttura name/affiliation
-    for maestro in config['maestri']:
-        yaml_header += f'  - name: "{maestro["nome"]}"\n'
-        yaml_header += f'    affiliation: "{maestro["qualifica"]}"\n'
-    
-    yaml_header += f"""documentclass: article
----
 
-"""
+    # Aggiunge ogni autore e la sua affiliazione
+    for idx, maestro in enumerate(config['maestri'], start=1):
+        yaml_header += f'  - \author[{idx}]{{{maestro["nome"]}}}\n'
+        yaml_header += f'  - \affil[{idx}]{{{maestro["qualifica"]}}}\n'
+
+    yaml_header += "---\n\n"
     return yaml_header
+
     
 def get_day_of_week(day_name: str) -> int:
     days = {
