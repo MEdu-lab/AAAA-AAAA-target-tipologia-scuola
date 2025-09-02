@@ -16,9 +16,9 @@ title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
 documentclass: article
 header-includes:
+  - \\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}
   - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
-  - \\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
