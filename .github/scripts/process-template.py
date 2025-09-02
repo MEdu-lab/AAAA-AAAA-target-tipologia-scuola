@@ -17,8 +17,8 @@ documentclass: article
 header-includes:
   - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
-
-  # Ridefinisce il formato autori con authblk
+  - \usepackage{titling}
+  - \pretitle{\begin{center}\LARGE {config['progetto']['gruppo']} \\[1em]}
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
