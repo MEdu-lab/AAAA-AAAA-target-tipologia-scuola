@@ -10,6 +10,8 @@ on:
       - 'config.yml'
       - '.github/scripts/**'
       - '.github/workflows/**'
+      - '*.sty'
+      - '*.tex'
 
   pull_request:
     branches: [ main ]
