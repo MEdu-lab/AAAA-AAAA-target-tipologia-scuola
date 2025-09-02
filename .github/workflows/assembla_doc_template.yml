@@ -53,7 +53,7 @@ jobs:
     - name: Genera il PDF con Pandoc
       run: |
         echo "\usepackage{mystyle}" > temp-header.tex
-        pandoc progetto-completo.md -o progetto-completo.pdf \
+        pandoc README.md -o progetto-completo.pdf \
           --pdf-engine=pdflatex \
           -V documentclass=article \
           -V lang=it \
