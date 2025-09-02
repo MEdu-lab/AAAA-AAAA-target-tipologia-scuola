@@ -57,8 +57,6 @@ jobs:
         echo "\usepackage{styles/mystyle}" > temp-header.tex
         pandoc README.md -o progetto-completo.pdf \
           --pdf-engine=pdflatex \
-          -V documentclass=article \
-          -V lang=it \
           -H temp-header.tex
         rm temp-header.tex
 
