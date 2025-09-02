@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from liquid import Template
 
 # --- Helpers ---
-
+"""
 def generate_yaml_header(config: dict) -> str:
     """Genera l'header YAML per Pandoc con authblk e stile personalizzato"""
     
@@ -27,7 +27,36 @@ header-includes:
 
     yaml_header += "---\n\n"
     return yaml_header
+"""
 
+def generate_yaml_header(config: dict) -> str:
+    """Genera l'header YAML per Pandoc usando la sintassi nativa per gli autori."""
+    
+    # Crea un dizionario con i metadati di Pandoc
+    metadata = {
+        'title': config['progetto']['titolo'],
+        'subtitle': f"{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}",
+        'author': [],
+        'documentclass': 'article',
+        'header-includes': [
+            f"\\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}",
+            "\\usepackage{styles/mystyle}"
+        ]
+    }
+
+    # Popola la lista degli autori nel formato che Pandoc capisce
+    for maestro in config['maestri']:
+        metadata['author'].append({
+            'name': maestro['nome'],
+            'affiliation': maestro['qualifica']
+        })
+
+    # Converte il dizionario in una stringa YAML
+    yaml_header = "---\n"
+    yaml_header += yaml.dump(metadata, allow_unicode=True, sort_keys=False)
+    yaml_header += "---\n\n"
+    
+    return yaml_header
     
 def get_day_of_week(day_name: str) -> int:
     days = {
