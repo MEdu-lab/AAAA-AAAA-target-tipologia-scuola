@@ -7,6 +7,31 @@ from liquid import Template
 
 # --- Helpers ---
 
+def generate_yaml_header(config: dict) -> str:
+    """Genera l'header YAML per il documento Markdown"""
+    
+    # 1. Estrae i nomi di tutti i maestri dal config
+    autori = [maestro['nome'] for maestro in config['maestri']]
+    
+    # 2. Costruisce l'header YAML con i metadati per Pandoc
+    yaml_header = f"""---
+title: "{config['progetto']['titolo']}"              # MEduLab
+subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"  # Casa dei Bambini... - 2025/2026
+author:
+"""
+    # 3. Aggiunge ogni autore come elemento di lista YAML
+    for autore in autori:
+        yaml_header += f'  - "{autore}"\n'
+    
+    # 4. Completa con data e altre opzioni Pandoc
+    yaml_header += f"""date: "\\today"    # Userà la data corrente
+lang: it              # Documento in italiano
+documentclass: article # Classe LaTeX
+---
+
+"""
+    return yaml_header
+    
 def get_day_of_week(day_name: str) -> int:
     days = {
         'domenica': 6, 'lunedì': 0, 'martedì': 1, 'mercoledì': 2,
@@ -118,8 +143,11 @@ def process_templates():
         files = sorted([f for f in sezioni_path.iterdir() if f.suffix == ".md"])
         print("File trovati:", [f.name for f in files])
 
-        final_doc = f"# {config['progetto']['titolo']}\n"
-        final_doc += f"### {config['progetto']['sottotitolo']} - Anno educativo {config['progetto']['anno_scolastico']}\n\n"
+        # 1. Genera l'header YAML per Pandoc
+        yaml_header = generate_yaml_header(config)
+        
+        # 2. Il documento inizia con l'header YAML (non più con il titolo manuale)
+        final_doc = yaml_header
 
         for file in files:
             print("Processando:", file)
