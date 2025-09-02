@@ -129,9 +129,9 @@ def process_templates():
             final_doc += rendered + "\n\n---\n\n"
 
         # Scrivi il documento finale
-        with open("progetto-completo.md", "w", encoding="utf-8") as f:
+        with open("README.md", "w", encoding="utf-8") as f:
             f.write(final_doc)
-        print("Documento generato: progetto-completo.md")
+        print("Documento generato: README.md")
 
         # File debug JSON
         with open("debug-programmazione.json", "w", encoding="utf-8") as f:
