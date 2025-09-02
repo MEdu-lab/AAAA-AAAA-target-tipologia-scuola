@@ -14,6 +14,15 @@
   {\normalfont\normalsize\bfseries\centering}
   {\thesubsubsection}{1em}{}
 
-\RequirePackage{titling}
+\RequirePackage{authblk}
+\RequirePackage{etoolbox}
 
+\renewcommand\Authfont{\normalsize\bfseries}
+\renewcommand\Affilfont{\small\itshape}
+\setlength{\affilsep}{1em}
 
+\makeatletter
+\pretocmd{\@author}
+  {\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}
+  {}{} % Argomenti per successo/fallimento (lasciare vuoti)
+\makeatother
