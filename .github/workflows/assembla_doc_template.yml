@@ -52,10 +52,9 @@ jobs:
       run: |
         pandoc progetto-completo.md -o progetto-completo.pdf \
           --pdf-engine=pdflatex \
-          --variable geometry:margin=2cm \
-          --variable fontsize=11pt \
-          --variable documentclass=article \
-          --variable lang=it
+          -V documentclass=article \
+          -V lang=it \
+          -H header.tex
 
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
