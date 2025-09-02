@@ -54,12 +54,20 @@ jobs:
 
     - name: Genera il PDF con Pandoc
       run: |
-        echo "\usepackage{styles/mystyle}" > temp-header.tex
+        cat > temp-header.tex << 'EOF'
+        \usepackage{styles/mystyle}
+        \usepackage{authblk}
+        
+        % Ridefinisce il formato autori con authblk
+        \renewcommand\Authfont{\normalsize\bfseries}
+        \renewcommand\Affilfont{\small\itshape}
+        \setlength{\affilsep}{1em}
+        EOF
+        
         pandoc README.md -o progetto-completo.pdf \
           --pdf-engine=pdflatex \
           -H temp-header.tex
         rm temp-header.tex
-
 
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
