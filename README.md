@@ -1,5 +1,14 @@
-# MEduLab
-### Casa dei Bambini 'il Girasole' - Anno educativo 2025/2026
+---
+title: "MEduLab"              # MEduLab
+subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"  # Casa dei Bambini... - 2025/2026
+author:
+  - "Giulio Romano De Mattia"
+  - "Pietro Barale"
+  - "Marco Di Gasbarro"
+date: "\today"    # Userà la data corrente
+lang: it              # Documento in italiano
+documentclass: article # Classe LaTeX
+---
 
 Per il quarto anno consecutivo vi proponiamo il laboratorio di musica d'insieme per l'infanzia, un corso extracurriculare pomeridiano aperto alle bambine e ai bambini che frequentano la Casa dei Bambini *il Girasole*. Ogni anno il laboratorio è stato guidato da musicisti formati nella pratica della musica contemporanea, elettroacustica e popolare, che hanno condiviso con i bambini un'atmosfera leggera ma densa di attività.
 Nella progettazione di esperienze di apprendimento significative cerchiamo l'innesco della scintilla dell'interesse dei bambini e puntiamo a realizzare alcune istanze della musica di ricerca del XX e XXI secolo su cui lavoriamo quotidianamente, in collaborazione con alcuni importanti Conservatori italiani.
