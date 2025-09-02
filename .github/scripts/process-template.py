@@ -12,7 +12,7 @@ def generate_yaml_header(config: dict) -> str:
     
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
-subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}\\\\Riga aggiuntiva qui"
+subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
 documentclass: article
 header-includes:
   - \\usepackage{{styles/mystyle}}
