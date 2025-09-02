@@ -10,7 +10,7 @@ on:
       - 'config.yml'
       - '.github/scripts/**'
       - '.github/workflows/**'
-      - '*.sty'
+      - '**/*.sty'
       - '*.tex'
 
   pull_request:
