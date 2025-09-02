@@ -1,12 +1,11 @@
 ---
-title: "MEduLab"
+title: "Titolo del progetto"
 subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"
 documentclass: article
 header-includes:
   - \usepackage{styles/mystyle}
   - \usepackage{authblk}
-
-  # Ridefinisce il formato autori con authblk
+  - \newcommand{\gruppo}{MEduLab}
   - \renewcommand\Authfont{\normalsize\bfseries}
   - \renewcommand\Affilfont{\small\itshape}
   - \setlength{\affilsep}{1em}
