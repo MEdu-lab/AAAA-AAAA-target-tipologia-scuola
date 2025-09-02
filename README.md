@@ -10,10 +10,10 @@ header-includes:
   - \renewcommand\Authfont{\normalsize\bfseries}
   - \renewcommand\Affilfont{\small\itshape}
   - \setlength{\affilsep}{1em}
-  - \author[1]{Giulio Romano De Mattia}
-  - \affil[1]{operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma}
-  - \author[2]{Pietro Barale}
-  - \affil[2]{operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma}
+  - \author[1]{Pietro Barale}
+  - \affil[1]{operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma}
+  - \author[2]{Giulio Romano De Mattia}
+  - \affil[2]{operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma}
   - \author[3]{Marco Di Gasbarro}
   - \affil[3]{coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara}
 ---
@@ -26,9 +26,9 @@ Nella progettazione di esperienze di apprendimento significative cerchiamo l'inn
 
 <!-- **Maestri:** -->
 
-- **Giulio Romano De Mattia** - operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma
-
 - **Pietro Barale** - operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma
+
+- **Giulio Romano De Mattia** - operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma
 
 - **Marco Di Gasbarro** - coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara
 
