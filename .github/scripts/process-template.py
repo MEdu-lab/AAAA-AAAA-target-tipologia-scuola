@@ -10,22 +10,24 @@ from liquid import Template
 def generate_yaml_header(config: dict) -> str:
     """Genera l'header YAML per il documento Markdown"""
     
-    # 1. Estrae i nomi di tutti i maestri dal config
-    autori = [maestro['nome'] for maestro in config['maestri']]
-    
-    # 2. Costruisce l'header YAML con i metadati per Pandoc
+    # Costruisce l'header YAML con i metadati per Pandoc
     yaml_header = f"""---
-title: "{config['progetto']['titolo']}"              # MEduLab
-subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"  # Casa dei Bambini... - 2025/2026
+title: "{config['progetto']['titolo']}"
+subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
 author:
 """
-
-    # 3. Aggiunge ogni autore come elemento di lista YAML
-    for autore in autori:
-        yaml_header += f'  - "{autore}"\n'
-    yaml_header += f"""
-lang: it              # Documento in italiano
-documentclass: article # Classe LaTeX
+    
+    # Aggiunge ogni autore con nome e affiliazione
+    for maestro in config['maestri']:
+        yaml_header += f'  - name: "{maestro["nome"]}"\n'
+        if 'qualifica' in maestro:
+            yaml_header += f'    affiliation: "{maestro["qualifica"]}"\n'
+        if 'descrizione' in maestro:
+            yaml_header += f'    description: "{maestro["descrizione"]}"\n'
+    
+    yaml_header += f"""date: "\\today"
+lang: it
+documentclass: article
 ---
 
 """
