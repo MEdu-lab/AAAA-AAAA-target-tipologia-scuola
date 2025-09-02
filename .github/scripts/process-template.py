@@ -22,6 +22,14 @@ header-includes:
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
+  # Abilita l'uso di comandi con '@' nel nome
+  - \\makeatletter
+  # Aggiunge il contenuto prima dell'elenco degli autori.
+  # \g@addto@macro\@author{...} antepone il nostro codice alla macro \@author.
+  # Inseriamo il comando \gruppo, centrato, in grassetto e con uno spazio verticale dopo.
+  - \\g@addto@macro\\@author{{\\begin{{center}}\\large\\bfseries\\gruppo\\end{{center}}\\par\\vspace{{1em}}}}
+  # Disabilita l'uso di comandi con '@' nel nome
+  - \\makeatother
 """
 
     # Aggiunge ogni autore e affiliazione con indice progressivo
