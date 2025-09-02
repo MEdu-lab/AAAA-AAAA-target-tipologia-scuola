@@ -1,6 +1,7 @@
 ---
 title: "Titolo del progetto"
 subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"
+author: []
 documentclass: article
 header-includes:
   - \newcommand{\gruppo}{MEduLab}
