@@ -8,19 +8,20 @@ from liquid import Template
 # --- Helpers ---
 
 def generate_yaml_header(config: dict) -> str:
-    """Genera l'header YAML per authblk package"""
-    
-    # Crea liste separate per autori e affiliazioni
-    autori = [maestro['nome'] for maestro in config['maestri']]
-    affiliazioni = [maestro['qualifica'] for maestro in config['maestri']]
+    """Genera l'header YAML per il documento Markdown"""
     
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
-author: {autori}
-institute: {affiliazioni}
-lang: it
-documentclass: article
+author:
+"""
+    
+    # Aggiunge ogni autore con struttura name/affiliation
+    for maestro in config['maestri']:
+        yaml_header += f'  - name: "{maestro["nome"]}"\n'
+        yaml_header += f'    affiliation: "{maestro["qualifica"]}"\n'
+    
+    yaml_header += f"""documentclass: article
 ---
 
 """
