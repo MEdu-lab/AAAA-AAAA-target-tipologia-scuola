@@ -19,10 +19,11 @@ title: "{config['progetto']['titolo']}"              # MEduLab
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"  # Casa dei Bambini... - 2025/2026
 author:
 """
+
     # 3. Aggiunge ogni autore come elemento di lista YAML
     for autore in autori:
         yaml_header += f'  - "{autore}"\n'
-    
+    yaml_header += f"""
 lang: it              # Documento in italiano
 documentclass: article # Classe LaTeX
 ---
