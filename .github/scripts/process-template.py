@@ -15,10 +15,11 @@ def generate_yaml_header(config: dict) -> str:
   - |
     \makeatletter
     \pretocmd{\@author}
-      {{\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}}
+      {\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}
       {}{}
     \makeatother
 """
+
 
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
