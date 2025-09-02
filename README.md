@@ -3,9 +3,9 @@ title: "Titolo del progetto"
 subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"
 documentclass: article
 header-includes:
+  - \newcommand{\gruppo}{MEduLab}
   - \usepackage{styles/mystyle}
   - \usepackage{authblk}
-  - \newcommand{\gruppo}{MEduLab}
   - \renewcommand\Authfont{\normalsize\bfseries}
   - \renewcommand\Affilfont{\small\itshape}
   - \setlength{\affilsep}{1em}
