@@ -23,8 +23,6 @@ author:
     for autore in autori:
         yaml_header += f'  - "{autore}"\n'
     
-    # 4. Completa con data e altre opzioni Pandoc
-    yaml_header += f"""date: "\\today"    # Userà la data corrente
 lang: it              # Documento in italiano
 documentclass: article # Classe LaTeX
 ---
