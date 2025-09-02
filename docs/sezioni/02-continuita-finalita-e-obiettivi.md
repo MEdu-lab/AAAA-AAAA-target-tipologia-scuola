@@ -9,8 +9,8 @@ Il progetto si fonda sul principio che l'apprendimento musicale nell'infanzia no
 -->
 
 **Obiettivi specifici:**
-- Sviluppare la capacità di ascolto attivo e l'invenzione sonora  
-- Potenziare la coordinazione motoria attraverso l'esperienza musicale  
-- Favorire l'esplorazione tattile ed uditiva utilizzando diversi materiali  
-- Promuovere la socializzazione e la condivisione di spazi e tempi in comune  
-- Stimolare la creatività nella costruzione di oggetti sonori  
+  - Sviluppare la capacità di ascolto attivo e l'invenzione sonora  
+  - Potenziare la coordinazione motoria attraverso l'esperienza musicale  
+  - Favorire l'esplorazione tattile ed uditiva utilizzando diversi materiali  
+  - Promuovere la socializzazione e la condivisione di spazi e tempi in comune  
+  - Stimolare la creatività nella costruzione di oggetti sonori  
