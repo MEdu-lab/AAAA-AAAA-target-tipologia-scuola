@@ -19,7 +19,6 @@ title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
 author: {autori}
 institute: {affiliazioni}
-date: "\\today"
 lang: it
 documentclass: article
 ---
