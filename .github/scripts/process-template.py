@@ -8,7 +8,7 @@ from liquid import Template
 # --- Helpers ---
 """
 def generate_yaml_header(config: dict) -> str:
-    """Genera l'header YAML per Pandoc con authblk e stile personalizzato"""
+    """Genera header YAML per Pandoc con authblk e stile personalizzato"""
     
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
