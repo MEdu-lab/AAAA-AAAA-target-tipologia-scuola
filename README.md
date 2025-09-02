@@ -3,7 +3,6 @@ title: "MEduLab"
 subtitle: "Casa dei Bambini 'il Girasole' - 2025/2026"
 author: ['Giulio Romano De Mattia', 'Pietro Barale', 'Marco Di Gasbarro']
 institute: ['operatore, diplomato in Musica Elettronica, Conservatorio di Santa Cecilia, Roma', 'operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma', 'coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio di Ferrara']
-date: "\today"
 lang: it
 documentclass: article
 ---
