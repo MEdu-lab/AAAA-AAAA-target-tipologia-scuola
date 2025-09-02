@@ -10,6 +10,7 @@ from liquid import Template
 def generate_yaml_header(config: dict) -> str:
     """Genera l'header YAML per Pandoc con authblk e stile personalizzato"""
     
+
     yaml_header = f"""---
 title: "{config['progetto']['titolo']}"
 subtitle: "{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}"
@@ -17,8 +18,9 @@ documentclass: article
 header-includes:
   - \\usepackage{{styles/mystyle}}
   - \\usepackage{{authblk}}
-  - \usepackage{titling}
-  - \pretitle{\begin{center}\LARGE {config['progetto']['gruppo']} \\[1em]}
+  - \\usepackage{{titling}}
+  - | 
+    \\pretitle{{\\begin{{center}}\\LARGE {config['progetto']['gruppo']} \\\\[1em]\\end{{center}}}}
   - \\renewcommand\\Authfont{{\\normalsize\\bfseries}}
   - \\renewcommand\\Affilfont{{\\small\\itshape}}
   - \\setlength{{\\affilsep}}{{1em}}
