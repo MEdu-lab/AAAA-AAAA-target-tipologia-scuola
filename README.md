@@ -5,10 +5,6 @@ documentclass: article
 header-includes:
   - \newcommand{\gruppo}{MEduLab}
   - \usepackage{styles/mystyle}
-  - \usepackage{authblk}
-  - \renewcommand\Authfont{\normalsize\bfseries}
-  - \renewcommand\Affilfont{\small\itshape}
-  - \setlength{\affilsep}{1em}
   - \author[1]{Pietro Barale}
   - \affil[1]{operatore, diplomato in Musica Applicata alle immagini, Conservatorio di Santa Cecilia, Roma}
   - \author[2]{Giulio Romano De Mattia}
