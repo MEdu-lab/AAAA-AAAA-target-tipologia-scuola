@@ -12,7 +12,8 @@ on:
       - '.github/workflows/**'
       - '**/*.sty'
       - '*.tex'
-
+      - 'customPandoc.latex'
+      
   pull_request:
     branches: [ main ]
     paths:
