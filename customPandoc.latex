@@ -534,29 +534,18 @@ $else$
 $endif$
 \subtitle{$subtitle$}
 $endif$
-% Nel template Pandoc:
-\begin{center}
-{\large\bfseries
+\author{%
 $for(author)$
 $if(author.name)$
-$author.name$%
+\textbf{$author.name$}%
+$if(author.affiliation)$ \\ \textit{$author.affiliation$}%
+$endif$
 $else$
 $author$%
 $endif$
-$sep$\quad
-$endfor$
-}\\[0.5em]
-{\small\itshape
-$for(author)$
-$if(author.affiliation)$
-$author.affiliation$%
-$else$
-\phantom{affiliation}%
-$endif$
-$sep$\quad
+$sep$\and
 $endfor$
 }
-\end{center}
 \date{$date$}
 $if(beamer)$
 $if(institute)$
