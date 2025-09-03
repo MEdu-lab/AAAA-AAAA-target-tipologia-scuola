@@ -55,7 +55,7 @@ jobs:
     - name: Genera il PDF con Pandoc
       run: |
         pandoc README.md -o progetto-completo.pdf \
-          --pdf-engine=xelatex
+          --pdf-engine=xelatex \
           --template=customPandoc.latex 
           
     - name: Debug check for .git
