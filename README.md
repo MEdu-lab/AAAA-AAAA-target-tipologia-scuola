@@ -1,6 +1,7 @@
 ---
 title: Titolo del progetto
 subtitle: Casa dei Bambini 'il Girasole' - 2025/2026
+documentclass: article
 author:
 - name: Pietro Barale
   affiliation: operatore, diplomato in Musica Applicata alle immagini, Conservatorio
@@ -11,7 +12,6 @@ author:
 - name: Marco Di Gasbarro
   affiliation: coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio
     di Ferrara
-documentclass: article
 header-includes:
 - \newcommand{\gruppo}{MEduLab}
 - \usepackage{styles/mystyle}
