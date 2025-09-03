@@ -29,6 +29,7 @@ from liquid import Template
 #    return yaml_header
 
 
+
 def generate_yaml_header(config: dict) -> str:
     """Genera header YAML per Pandoc usando la sintassi nativa per gli autori."""
     
@@ -36,7 +37,7 @@ def generate_yaml_header(config: dict) -> str:
     metadata = {
         'title': config['progetto']['titolo'],
         'subtitle': f"{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}",
-        'author': [],
+        'author': [],  # Inizializza come lista vuota
         'documentclass': 'article',
         'header-includes': [
             f"\\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}",
@@ -46,10 +47,9 @@ def generate_yaml_header(config: dict) -> str:
 
     # Popola la lista degli autori nel formato che Pandoc capisce
     for maestro in config['maestri']:
-        metadata['author'].append({
-            'name': maestro['nome'],
-            'affiliation': maestro['qualifica']
-        })
+        # Formatta l'autore e l'affiliazione come stringa per Pandoc
+        author_string = f"{maestro['nome']}^^{maestro['qualifica']}"
+        metadata['author'].append(author_string)
 
     # Converte il dizionario in una stringa YAML
     yaml_header = "---\n"
@@ -57,6 +57,7 @@ def generate_yaml_header(config: dict) -> str:
     yaml_header += "---\n\n"
     
     return yaml_header
+
     
 def get_day_of_week(day_name: str) -> int:
     days = {
