@@ -37,27 +37,27 @@ def generate_yaml_header(config: dict) -> str:
     metadata = {
         'title': config['progetto']['titolo'],
         'subtitle': f"{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}",
-        'author': [],  # Inizializza come lista vuota
+        'author': [],
         'documentclass': 'article',
         'header-includes': [
             f"\\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}",
             "\\usepackage{styles/mystyle}"
         ]
     }
-
+    
     # Popola la lista degli autori nel formato che Pandoc capisce
     for maestro in config['maestri']:
-        # Formatta l'autore e l'affiliazione come stringa per Pandoc
-        author_string = f"{maestro['nome']}^^{maestro['qualifica']}"
-        metadata['author'].append(author_string)
-
+        metadata['author'].append({
+            'name': maestro['nome'],
+            'affiliation': maestro['qualifica']
+        })
+    
     # Converte il dizionario in una stringa YAML
     yaml_header = "---\n"
     yaml_header += yaml.dump(metadata, allow_unicode=True, sort_keys=False)
     yaml_header += "---\n\n"
     
     return yaml_header
-
     
 def get_day_of_week(day_name: str) -> int:
     days = {
