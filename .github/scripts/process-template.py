@@ -37,7 +37,6 @@ def generate_yaml_header(config: dict) -> str:
     metadata = {
         'title': config['progetto']['titolo'],
         'subtitle': f"{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}",
-        'author': [],
         'documentclass': 'article',
         'header-includes': [
             f"\\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}",
