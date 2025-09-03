@@ -56,7 +56,7 @@ jobs:
       run: |
         pandoc README.md -o progetto-completo.pdf \
           --pdf-engine=xelatex
-          --template=custom_default.latex 
+          --template=customPandoc.latex 
           
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
