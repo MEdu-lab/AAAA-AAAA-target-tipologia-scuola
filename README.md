@@ -2,15 +2,12 @@
 title: Titolo del progetto
 subtitle: Casa dei Bambini 'il Girasole' - 2025/2026
 author:
-- name: Pietro Barale
-  affiliation: operatore, diplomato in Musica Applicata alle immagini, Conservatorio
-    di Santa Cecilia, Roma
-- name: Giulio Romano De Mattia
-  affiliation: operatore, diplomato in Musica Elettronica, Conservatorio di Santa
-    Cecilia, Roma
-- name: Marco Di Gasbarro
-  affiliation: coordinatore, dottorando in Composizione e Performance Musicale, Conservatorio
-    di Ferrara
+- Pietro Barale^^operatore, diplomato in Musica Applicata alle immagini, Conservatorio
+  di Santa Cecilia, Roma
+- Giulio Romano De Mattia^^operatore, diplomato in Musica Elettronica, Conservatorio
+  di Santa Cecilia, Roma
+- Marco Di Gasbarro^^coordinatore, dottorando in Composizione e Performance Musicale,
+  Conservatorio di Ferrara
 documentclass: article
 header-includes:
 - \newcommand{\gruppo}{MEduLab}
