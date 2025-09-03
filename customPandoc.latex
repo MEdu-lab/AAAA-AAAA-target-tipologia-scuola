@@ -534,17 +534,16 @@ $else$
 $endif$
 \subtitle{$subtitle$}
 $endif$
-\author{%
+\author{
+\begin{tabular}{c@{\hspace{2cm}}c@{\hspace{2cm}}c}
 $for(author)$
-$if(author.name)$
-\textbf{$author.name$}%
-$if(author.affiliation)$ \\ \textit{$author.affiliation$}%
-$endif$
-$else$
-$author$%
-$endif$
-$sep$\and
+  \textbf{$author.name$} \\
+  $if(author.affiliation)$
+    \textit{$author.affiliation$}
+  $endif$
+$sep$ & 
 $endfor$
+\end{tabular}
 }
 \date{$date$}
 $if(beamer)$
