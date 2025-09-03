@@ -38,6 +38,7 @@ def generate_yaml_header(config: dict) -> str:
         'title': config['progetto']['titolo'],
         'subtitle': f"{config['progetto']['sottotitolo']} - {config['progetto']['anno_scolastico']}",
         'documentclass': 'article',
+        'author': [],
         'header-includes': [
             f"\\newcommand{{\\gruppo}}{{{config['progetto']['gruppo']}}}",
             "\\usepackage{styles/mystyle}"
