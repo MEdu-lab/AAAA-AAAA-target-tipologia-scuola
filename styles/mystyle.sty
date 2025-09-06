@@ -28,3 +28,25 @@
   {\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}
   {}{} % Argomenti per successo/fallimento (lasciare vuoti)
 \makeatother
+
+% Ridefinizione di maketitle 
+\makeatletter
+\renewcommand{\@maketitle}{%
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    \@ifundefined{@subtitle}{}{{\large \@subtitle \par}\vskip 1.5em}%
+    \def\temp{\gruppo}%
+    \ifx\temp\empty\else{\large\bfseries \gruppo \par}\vskip 1.5em\fi
+    \authorlist  % Qui vanno gli autori
+    \vskip 1.5em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em
+}
+\providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\makeatother
