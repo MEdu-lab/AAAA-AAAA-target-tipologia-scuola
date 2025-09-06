@@ -180,7 +180,7 @@ def process_templates():
             with open(file, "r", encoding="utf-8") as f:
                 template = Template(f.read())
             rendered = template.render(**config)
-            final_doc += rendered + "\n\n---\n\n"
+            final_doc += rendered + "\n\n"
 
         # Scrivi il documento finale
         with open("README.md", "w", encoding="utf-8") as f:
