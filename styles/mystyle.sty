@@ -9,9 +9,7 @@
 
 \usepackage{styles/titlesec}
 \titleformat{\section}[block]{\normalfont\Large\bfseries\centering}{\thesection}{1em}{}
-
 \titleformat{\subsection}[block]{\normalfont\Large\bfseries\centering}{}{1em}{}
-
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries\centering}
   {\thesubsubsection}{1em}{}
@@ -19,10 +17,12 @@
 \RequirePackage{authblk}
 \RequirePackage{etoolbox}
 
+% Definizione degli stili per gli autori
 \renewcommand\Authfont{\normalsize\bfseries}
 \renewcommand\Affilfont{\small\itshape}
 \setlength{\affilsep}{1em}
 
+% Aggiungi il gruppo prima degli autori
 \makeatletter
 \pretocmd{\@author}
   {\begin{center}\large\bfseries\gruppo\end{center}\par\vspace{1em}}
@@ -38,15 +38,21 @@
   \begin{center}%
     {\LARGE \@title \par}%
     \vskip 1.5em%
+    % Sottotitolo se presente
     \@ifundefined{@subtitle}{}{{\large \@subtitle \par}\vskip 1.5em}%
+    % Gruppo se presente
     \def\temp{\gruppo}%
     \ifx\temp\empty\else{\large\bfseries \gruppo \par}\vskip 1.5em\fi
-    \authorlist  % Qui vanno gli autori
+    % Lista degli autori con nome, ruolo e qualifica
+    \authorlist
     \vskip 1.5em%
+    % Data
     {\large \@date}%
   \end{center}%
   \par
   \vskip 1.5em
 }
+
+% Comando per il sottotitolo
 \providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
 \makeatother
