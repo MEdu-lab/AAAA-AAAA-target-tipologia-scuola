@@ -37,8 +37,6 @@ Nella progettazione di esperienze di apprendimento significative cerchiamo l'inn
 -->
 
 
----
-
 ## CONTINUITÀ, FINALITÀ E OBIETTIVI
 
 Il corso dell'anno precedente ha evidenziato risultati significativi riguardo il coinvolgimento dei bambini nella costruzione di esperienze musicali collettive. La frequenza media per ogni incontro è stata di 6-9 bambini partecipanti. Il riscontro per noi più prezioso è arrivato dalle famiglie, che ci hanno riportato come i bambini hanno riproposto spontaneamente a casa le attività svolte: esplorare le sonorità dell' ambiente circostante, vocalizzare i suoni delle percussioni e trasformare oggetti quotidiani in strumenti musicali ad esempio sono chiari indicatori dell'interiorizzazione dell'esperienza vissuta.
@@ -56,8 +54,6 @@ Il progetto si fonda sul principio che l'apprendimento musicale nell'infanzia no
   - Promuovere la socializzazione e la condivisione di spazi e tempi in comune  
   - Stimolare la creatività nella costruzione di oggetti sonori  
 
-
----
 
 ## METODO: RISORSE E MATERIALI
 
@@ -78,8 +74,6 @@ Parallelamente progettiamo le pratiche collettive tenendo conto delle esigenze e
 La filosofia del progetto prevede l'utilizzo creativo di materiali semplici e accessibili, trasformando l'ambiente e gli oggetti in opportunità di scoperta musicale. Non sono previsti supporti tecnologici o allestimenti per la diffusione di musica preregistrata, privilegiando le dimensioni educative della manualità e della partecipazione.
 
 
-
----
 
 ## ASPETTI ORGANIZZATIVI
 
@@ -118,6 +112,4 @@ La programmazione tiene conto delle pause per le vacanze di Natale.
 *Il mese di giugno si decide per tempo in base alle richieste di partecipazione*
 
 
-
----
 
