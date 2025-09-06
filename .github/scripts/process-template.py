@@ -19,10 +19,25 @@ def generate_yaml_header(config):
     
     author_boxes = []
     for maestro in maestri:
+        # Costruisci il contenuto della minipage con nome, ruolo e qualifica
+        nome = maestro['nome']
+        ruolo = maestro.get('ruolo', '')
+        qualifica = maestro.get('qualifica', '')
+        
+        # Costruisci il testo con le righe separate
+        content_lines = [f"\\textbf{{{nome}}}"]
+        
+        if ruolo:
+            content_lines.append(f"\\textit{{{ruolo}}}")
+        
+        if qualifica:
+            content_lines.append(f"\\textit{{{qualifica}}}")
+        
+        content = "\\\\".join(content_lines)
+        
         box = f"""\\begin{{minipage}}{{{width}\\textwidth}}
         \\centering
-        \\textbf{{{maestro['nome']}}}\\\\
-        \\textit{{{maestro.get('qualifica', '')}}}
+        {content}
       \\end{{minipage}}"""
         author_boxes.append(box)
     
@@ -42,7 +57,7 @@ def generate_yaml_header(config):
     }
     
     return "---\n" + yaml.dump(metadata) + "---\n\n"
-        
+    
 def get_day_of_week(day_name: str) -> int:
     days = {
         'domenica': 6, 'lunedì': 0, 'martedì': 1, 'mercoledì': 2,
