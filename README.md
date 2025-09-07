@@ -77,7 +77,7 @@ La filosofia del progetto prevede l'utilizzo creativo di materiali semplici e ac
 
 ## ASPETTI ORGANIZZATIVI
 
-Il laboratorio si svolge ogni mercoledì dal 01/10/2025 al 27/05/2026, per un totale di **33 incontri** (media di 4.1 incontri al mese).
+Il laboratorio si svolge ogni mercoledì dal  al , per un totale di ** incontri** (media di  incontri al mese).
 Ogni incontro dura circa un'ora e mezza: i bambini ci vengono affidati direttamente dalle educatrici entro le 16:30 e vengono riconsegnati alle famiglie tra le 17:45 e le 17:55. Gli ultimi minuti fino alle 18 servono agli organizzatori per lasciare ambienti puliti e adatti all'attività scolastica del giorno successivo, quindi si raccomanda puntualità per il ritiro dei bambini.
 
 Ogni incontro si articola nel modo seguente:  
@@ -87,9 +87,9 @@ Ogni incontro si articola nel modo seguente:
 
 **Incontri mensili:**
 
-| Ottobre | Novembre | Dicembre | Gennaio | Febbraio | Marzo | Aprile | Maggio |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **5** | **4** | **3** | **4** | **4** | **4** | **5** | **4** |
+|
+|
+|
 
 La programmazione tiene conto delle pause per le vacanze di Natale.
 
@@ -97,16 +97,12 @@ La programmazione tiene conto delle pause per le vacanze di Natale.
 
 - Quota bimestrale: 120€ per bambino    
 <!-- - Pagamento: all'inizio di ogni bimestre   -->
-- **Costo totale del corso: 480€** (4 bimestri)    
+- **Costo totale del corso: €** ( bimestri)    
 
 <!---
 **Calendario pagamenti:**
 | Periodo | Importo | Scadenza |
 | :--- | ---: | :---: |
-| Ottobre-novembre | 120€ | inizio ottobre |
-| Dicembre-gennaio | 120€ | inizio dicembre |
-| Febbraio-marzo | 120€ | inizio febbraio |
-| Aprile-maggio | 120€ | inizio aprile |
 
 -->
 *Il mese di giugno si decide per tempo in base alle richieste di partecipazione*
