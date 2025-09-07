@@ -13,7 +13,7 @@ header-includes:
   hfill\\begin{minipage}{0.3\\textwidth}\n        \\centering\n        \\textbf{Marco\
   \ Di Gasbarro}\\\\\\textit{coordinatore}\\\\\\textit{dottorando in Composizione\
   \ e Performance Musicale, Conservatorio di Ferrara}\n      \\end{minipage}}"
-subtitle: Casa dei Bambini 'il Girasole' - 2025/2026
+subtitle: Casa dei Bambini *il Girasole* - 2025/2026
 title: Titolo del progetto
 ---
 
