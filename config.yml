@@ -4,7 +4,7 @@ progetto:
   gruppo: "MEduLab"
   sottotitolo: "Casa dei Bambini 'il Girasole'"
   anno_scolastico: "2025/2026"
-
+  tipo_scuola: "pubblica"
 # Informazioni sui maestri
 maestri:
   - nome: "Pietro Barale"
