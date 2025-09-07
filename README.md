@@ -75,37 +75,11 @@ La filosofia del progetto prevede l'utilizzo creativo di materiali semplici e ac
 
 
 
-## ASPETTI ORGANIZZATIVI
 
-Il laboratorio si svolge ogni mercoledì dal  al , per un totale di ** incontri** (media di  incontri al mese).
-Ogni incontro dura circa un'ora e mezza: i bambini ci vengono affidati direttamente dalle educatrici entro le 16:30 e vengono riconsegnati alle famiglie tra le 17:45 e le 17:55. Gli ultimi minuti fino alle 18 servono agli organizzatori per lasciare ambienti puliti e adatti all'attività scolastica del giorno successivo, quindi si raccomanda puntualità per il ritiro dei bambini.
 
-Ogni incontro si articola nel modo seguente:  
-- 16:30 inizio attività musicale   
-- 17:15 merenda e svago   
-- 17:40 preparazione per l'uscita   
+---
 
-**Incontri mensili:**
-
-|
-|
-|
-
-La programmazione tiene conto delle pause per le vacanze di Natale.
-
-**Costi:**
-
-- Quota bimestrale: 120€ per bambino    
-<!-- - Pagamento: all'inizio di ogni bimestre   -->
-- **Costo totale del corso: €** ( bimestri)    
-
-<!---
-**Calendario pagamenti:**
-| Periodo | Importo | Scadenza |
-| :--- | ---: | :---: |
-
--->
-*Il mese di giugno si decide per tempo in base alle richieste di partecipazione*
+La programmazione dettagliata, i costi e le modalità organizzative verranno concordati direttamente con la scuola in base alle vostre specifiche esigenze e disponibilità.
 
 
 
