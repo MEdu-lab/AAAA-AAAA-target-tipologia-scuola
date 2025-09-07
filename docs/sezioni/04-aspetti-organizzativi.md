@@ -1,3 +1,5 @@
+{% if progetto.tipo_scuola != "pubblica" %}
+
 ## ASPETTI ORGANIZZATIVI
 
 Il laboratorio si svolge ogni {{ programmazione.giorno_settimana }} dal {{ programmazione_calcolata.primo_incontro }} al {{ programmazione_calcolata.ultimo_incontro }}, per un totale di **{{ programmazione_calcolata.totale_incontri }} incontri** (media di {{ programmazione_calcolata.media_per_mese }} incontri al mese).
@@ -31,3 +33,9 @@ La programmazione tiene conto delle pause per le vacanze di Natale.
 -->
 *{{ costi.nota_giugno }}*
 
+{% else %}
+
+---
+
+La programmazione dettagliata, i costi e le modalità organizzative verranno concordati direttamente con la scuola in base alle vostre specifiche esigenze e disponibilità.
+{% endif %}
