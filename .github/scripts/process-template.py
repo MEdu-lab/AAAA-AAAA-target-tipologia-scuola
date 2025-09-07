@@ -155,14 +155,19 @@ def process_templates():
             config = yaml.safe_load(f)
         print("Config caricato:", list(config.keys()))
 
-        # Calcoli
-        programmazione_calcolata = calcola_mercoledi(config)
-        print("Programmazione calcolata:", programmazione_calcolata)
-        config["programmazione_calcolata"] = programmazione_calcolata
+        tipo_scuola = config["progetto"].get("tipo_scuola", "privata")
+        
+        # Calcoli SOLO per scuole private
+        if tipo_scuola == "privata":
+            programmazione_calcolata = calcola_mercoledi(config)
+            print("Programmazione calcolata:", programmazione_calcolata)
+            config["programmazione_calcolata"] = programmazione_calcolata
 
-        costi_calcolati = calcola_costi(config)
-        print("Costi calcolati:", costi_calcolati)
-        config["costi_calcolati"] = costi_calcolati
+            costi_calcolati = calcola_costi(config)
+            print("Costi calcolati:", costi_calcolati)
+            config["costi_calcolati"] = costi_calcolati
+        else:
+            print("Scuola pubblica: saltando calcoli costi e programmazione")
 
         # Processa template Liquid
         sezioni_path = Path("docs/sezioni")
@@ -187,12 +192,13 @@ def process_templates():
             f.write(final_doc)
         print("Documento generato: README.md")
 
-        # File debug JSON
-        with open("debug-programmazione.json", "w", encoding="utf-8") as f:
-            json.dump({
-                "programmazione": programmazione_calcolata,
-                "costi": costi_calcolati
-            }, f, indent=2, ensure_ascii=False)
+        # File debug JSON SOLO per scuole private
+        if tipo_scuola == "privata":
+            with open("debug-programmazione.json", "w", encoding="utf-8") as f:
+                json.dump({
+                    "programmazione": programmazione_calcolata,
+                    "costi": costi_calcolati
+                }, f, indent=2, ensure_ascii=False)
 
     except Exception as e:
         print("Errore durante il processing:", e)
