@@ -53,12 +53,20 @@ jobs:
     - name: Install Pandoc
       run: apk add --no-cache pandoc
 
+    #- name: Genera il PDF con Pandoc
+    #  run: |
+    #    pandoc README.md -o progetto-completo.pdf \
+    #      --pdf-engine=xelatex \
+    #      --template=customPandoc.latex 
     - name: Genera il PDF con Pandoc
       run: |
-        pandoc README.md -o progetto-completo.pdf \
+        TITLE=$(sed -n '/^---$/,/^---$/p' README.md | grep '^title:' | head -n1 | sed 's/title:[[:space:]]*//; s/^ *//; s/ *$//; s/[*]//g')
+        SAFE_TITLE=$(echo "$TITLE" | tr ' ' '_' | tr -cd '[:alnum:]_')
+        echo "Generazione PDF: $SAFE_TITLE.pdf"
+        pandoc README.md -o "$SAFE_TITLE.pdf" \
           --pdf-engine=xelatex \
           --template=customPandoc.latex 
-          
+
     - name: Debug check for .git
       run: ls -la $GITHUB_WORKSPACE/.git
 
@@ -76,7 +84,7 @@ jobs:
         git config --global --add safe.directory "$GITHUB_WORKSPACE"
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add README.md progetto-completo.pdf debug-programmazione.json
+        git add README.md *.pdf
         git diff --staged --quiet || git commit -m "Auto-aggiornamento documento con template [skip ci]"
 
     - name: Push delle modifiche
