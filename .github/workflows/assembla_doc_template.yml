@@ -31,14 +31,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/kjarosh/latex:2025.1-basic
+      image: ghcr.io/kjarosh/latex:2025.1-small
 
     steps:
     - name: Install dependencies (missing LaTeX packages )
       run: |
         apk add --no-cache git python3 py3-pip bash pandoc tar
         pip install --break-system-packages pyyaml python-liquid
-        tlmgr install preprint xcolor
+        tlmgr install preprint 
         
     - name: Checkout repository
       uses: actions/checkout@v4
