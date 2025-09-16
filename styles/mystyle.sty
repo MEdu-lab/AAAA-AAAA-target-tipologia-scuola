@@ -36,7 +36,7 @@
   \null
   \vskip 2em%
   \begin{center}%
-    {\LARGE \@title \par}%
+    {\Huge \@title \par}%
     \vskip 1.5em%
     % Sottotitolo se presente
     \@ifundefined{@subtitle}{}{{\large \@subtitle \par}\vskip 1.5em}%
@@ -55,4 +55,14 @@
 
 % Comando per il sottotitolo
 \providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+% ========================================
+% Piè di pagina con copyright
+% ========================================
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % cancella intestazioni e piè di pagina predefiniti
+\fancyfoot[C]{\small \textcopyright\ 2025 MEduLab. Tutti i diritti riservati.}
+\renewcommand{\headrulewidth}{0pt} % rimuove linea in cima
+\renewcommand{\footrulewidth}{0pt} % rimuove linea in basso
 \makeatother
