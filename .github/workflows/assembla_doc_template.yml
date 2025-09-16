@@ -10,7 +10,7 @@ on:
       - 'config.yml'
       - '.github/scripts/**'
       - '.github/workflows/**'
-      - '**/*.sty'
+      - 'styles/**'
       - '*.tex'
       - 'customPandoc.latex'
       
@@ -22,73 +22,76 @@ on:
       - '.github/scripts/**'
       - '.github/workflows/**'
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/kjarosh/latex:2024.4-full
+      image: ghcr.io/kjarosh/latex:2025.1-basic
 
     steps:
-    - name: Install git
-      run: apk add --no-cache git
-
+    - name: Install dependencies (missing LaTeX packages )
+      run: |
+        apk add --no-cache git python3 py3-pip bash pandoc tar
+        pip install --break-system-packages pyyaml python-liquid
+        tlmgr install preprint xcolor
+        
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    - name: Debug .git presence immediately after checkout
-      run: ls -la $GITHUB_WORKSPACE/.git
-
-    - name: Install Python + deps
+    - name: Processa i template con Python  e Genera il PDF con Pandoc
       run: |
-        apk add --no-cache python3 py3-pip bash git
-        pip install --break-system-packages pyyaml python-liquid 
-
-    - name: Processa i template con Python
-      run: |
-        rm -f README.md
+        rm -f README.md *.pdf
         python3 .github/scripts/process-template.py
-
-    - name: Install Pandoc
-      run: apk add --no-cache pandoc
-
-    #- name: Genera il PDF con Pandoc
-    #  run: |
-    #    pandoc README.md -o progetto-completo.pdf \
-    #      --pdf-engine=xelatex \
-    #      --template=customPandoc.latex 
-    - name: Genera il PDF con Pandoc
-      run: |
         TITLE=$(sed -n '/^---$/,/^---$/p' README.md | grep '^title:' | head -n1 | sed 's/title:[[:space:]]*//; s/^ *//; s/ *$//; s/[*]//g')
         SAFE_TITLE=$(echo "$TITLE" | tr ' ' '_' | tr -cd '[:alnum:]_')
-        echo "Generazione PDF: $SAFE_TITLE.pdf"
-        pandoc README.md -o "$SAFE_TITLE.pdf" \
-          --pdf-engine=xelatex \
-          --template=customPandoc.latex 
-
-    - name: Debug check for .git
-      run: ls -la $GITHUB_WORKSPACE/.git
-
-    - name: Mostra working directory e presenza .git
-      run: |
-        echo "PWD=$(pwd)"
-        echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
-        ls -la "$GITHUB_WORKSPACE"
-        ls -la "$GITHUB_WORKSPACE/.git"
+        TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+        #PDF_NAME="${SAFE_TITLE}-${TIMESTAMP}.pdf"
+        PDF_NAME="${SAFE_TITLE}-MEduLab-${TIMESTAMP}.pdf"
+        echo "Generazione PDF: $PDF_NAME"
+        pandoc README.md -o "$PDF_NAME" \
+          --pdf-engine=pdflatex \
+          --template=styles/customPandoc.latex
+        echo "PDF_NAME=$PDF_NAME" >> $GITHUB_ENV
+        mkdir -p pages_artifact
+        cp "${PDF_NAME}" pages_artifact/latest.pdf
+    - uses: actions/upload-artifact@v4
+      with:
+        name: progetto-completo_pdf
+        path: "${{ env.PDF_NAME }}"
+        overwrite: true
+        
+    - name: Upload artifact per Pages
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: pages_artifact
 
     - name: Commit del documento assemblato
       run: |
         cd "$GITHUB_WORKSPACE"
-        ls -la
         git config --global --add safe.directory "$GITHUB_WORKSPACE"
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add README.md *.pdf
+        rm -f *.pdf
+        git add -u
+        git add README.md
         git diff --staged --quiet || git commit -m "Auto-aggiornamento documento con template [skip ci]"
-
+        
     - name: Push delle modifiche
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
+        
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy su GitHub Pages
+        uses: actions/deploy-pages@v4
