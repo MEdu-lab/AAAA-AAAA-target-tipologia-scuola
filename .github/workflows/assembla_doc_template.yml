@@ -30,6 +30,7 @@ jobs:
       run: |
         apt-get update && apt-get install -y git python3-pip
         pip install pyyaml python-liquid
+        tlmgr update --self
         tlmgr install preprint xcolor
         
     - name: Checkout repository
